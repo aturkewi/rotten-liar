@@ -11,11 +11,9 @@
     "96": "icons/boo-96.jpg"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
-    }
-  ]
-
+  "browser_action": {
+    "default_icon": "icons/boo-32.jpg",
+    "default_title": "Rotten Liar",
+    "default_popup": "popup/set_score.html"
+  }
 }

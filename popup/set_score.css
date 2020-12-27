@@ -1,0 +1,16 @@
+html, body {
+  width: 200px;
+}
+
+#popup_content {
+   display: flex;
+   flex-direction: column;
+}
+
+.input {
+  flex-direction: column;
+}
+
+.submit {
+  padding-top: 10px;
+}
