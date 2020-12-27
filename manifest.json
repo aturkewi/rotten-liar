@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Rotten Liar",
+  "version": "1.0",
+
+  "description": "Allows you to set the Rotten Tomatoes score for a movie or show",
+
+  "icons": {
+    "48": "icons/boo-48.png",
+    "96": "icons/boo-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["borderify.js"]
+    }
+  ]
+
+}
