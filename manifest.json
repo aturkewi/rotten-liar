@@ -1,5 +1,4 @@
 {
-
   "manifest_version": 2,
   "name": "Rotten Liar",
   "version": "1.0",
@@ -11,9 +10,13 @@
     "96": "icons/boo-96.jpg"
   },
 
+  "permissions": [
+    "activeTab"
+  ],
+
   "browser_action": {
     "default_icon": "icons/boo-32.jpg",
     "default_title": "Rotten Liar",
-    "default_popup": "popup/set_score.html"
+    "default_popup": "popup/select_score.html"
   }
 }
