@@ -2,7 +2,7 @@
 
 Firefox extension that allows the user to set scores on a Rotten Tomatoes movie or TV show.
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/hPq6Mpv"  ><a href="//imgur.com/a/hPq6Mpv">Rotten Liar Example</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![Rotten Liar Example](https://i.imgur.com/SsMEPgr.mp4)
 
 ## Why
 
