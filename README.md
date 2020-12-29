@@ -2,7 +2,7 @@
 
 Firefox extension that allows the user to set scores on a Rotten Tomatoes movie or TV show.
 
-![](https://imgur.com/gallery/hPq6Mpv)
+![](https://i.imgur.com/SsMEPgr.mp4)
 
 ## Why
 
