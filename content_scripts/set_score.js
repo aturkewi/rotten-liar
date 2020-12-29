@@ -1,5 +1,3 @@
-console.log("I have run on the tab");
-
 (function() {
   if (window.hasRun) {
     return;
@@ -7,17 +5,24 @@ console.log("I have run on the tab");
   window.hasRun = true;
 
   const allImageClasses = [
-    "certified_fresh"
+    "certified_fresh", "fresh", "rotten", "upright", "spilled"
   ]
 
-  const getImageClass = (score) => {
-    if(score >= 100){
-      return "fresh"
-    }
-    if(score > 90){
+  const getCriticImageClass = (score) => {
+    if(score >= 75){
       return "certified_fresh"
     }
+    if(score >= 60){
+      return "fresh"
+    }
     return "rotten"
+  }
+
+  const getAudienceImageClass = (score) => {
+    if(score >= 50){
+      return 'upright'
+    }
+    return 'spilled'
   }
 
   const setScore = (container, score) => {
@@ -25,37 +30,49 @@ console.log("I have run on the tab");
     percentage.innerHTML = `${score}%`
   }
 
-  const setImage = (container, score) => {
-    const iconSpan = container.getElementsByClassName("mop-ratings-wrap__icon")[0]
+  const cleanClass = (iconSpan) => {
     const classArray = iconSpan.className.split(" ")
-    const cleanClassList = classArray.reduce((acc, current) => {
+    return classArray.reduce((acc, current) => {
       if (allImageClasses.indexOf(current) == -1) {
         return [...acc, current]
       } else {
         return acc
       }
     }, [])
+  }
 
-    const imageClass = getImageClass(score)
+  const setCriticImage = (container, score) => {
+    const iconSpan = container.getElementsByClassName("mop-ratings-wrap__icon")[0]
+    const cleanClassList = cleanClass(iconSpan)
+    const imageClass = getCriticImageClass(score)
     iconSpan.className = [...cleanClassList, imageClass].join(" ")
   }
 
-  const updateCriticScore = (score) => {
-    const criticScoreContainer = document.getElementsByClassName("critic-score")[0]
-    setScore(criticScoreContainer, score)
-    setImage(criticScoreContainer, score)
+  const setAudienceImage = (container, score) => {
+    const iconSpan = container.getElementsByClassName("mop-ratings-wrap__icon")[0]
+    const cleanClassList = cleanClass(iconSpan)
+    const imageClass = getAudienceImageClass(score)
+    iconSpan.className = [...cleanClassList, imageClass].join(" ")
   }
-  //
-  // const updateAudientScore = (score) => {
-  //
-  // }
+
+  const updateCriticScore = (criticScoreContainer, score) => {
+    setScore(criticScoreContainer, score)
+    setCriticImage(criticScoreContainer, score)
+  }
+
+  const updateAudientScore = (audientScoreContainer, score) => {
+    setScore(audientScoreContainer, score)
+    setAudienceImage(audientScoreContainer, score)
+  }
 
   browser.runtime.onMessage.addListener((message) => {
     if (message.command === "set_score") {
-      updateCriticScore(message.criticScore)
-      // updateAudientScore(message.audienceScore)
-      console.log("LOGGING MESSSGE:");
-      console.log(message);
+      const scoreboard = document.getElementsByClassName("js-scoreboard-container")[0]
+      const ciritcScoreContainer = scoreboard.children[0]
+      const audientScoreContainer = scoreboard.children[1]
+
+      updateCriticScore(ciritcScoreContainer, message.criticScore)
+      updateAudientScore(audientScoreContainer, message.audienceScore)
     }
   });
 
