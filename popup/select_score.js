@@ -3,8 +3,6 @@ const logError = (error) => {
 }
 
 function listenForSubmit() {
-  const container = document.getElementById("popup-content")
-  container.className = "red-border"
   const submit = document.getElementById("js--submit")
 
   submit.addEventListener("click", () => {

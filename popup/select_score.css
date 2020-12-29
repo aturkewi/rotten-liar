@@ -2,20 +2,26 @@ html, body {
   width: 200px;
 }
 
-#popup_content {
-   display: flex;
-   flex-direction: column;
+#popup-content {
+   font-family: sans-serif;
+}
+
+.custom-font {
 }
 
 .input {
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .submit {
   padding-top: 10px;
-}
-
-.red-border {
-  border-style: solid;
-  border-color: red;
 }
