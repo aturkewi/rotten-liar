@@ -27,7 +27,7 @@
 
   const setScore = (container, score) => {
     const percentage = container.getElementsByClassName("mop-ratings-wrap__percentage")[0]
-    percentage.innerHTML = `${score}%`
+    percentage.textContent = `${score}%`
   }
 
   const cleanClass = (iconSpan) => {
