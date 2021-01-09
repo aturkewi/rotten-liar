@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Rotten Liar",
   "author": "aturkewi",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "homepage_url": "https://github.com/aturkewi/rotten-liar",
   "description": "Allows you to set the Rotten Tomatoes score for a movie or show",
@@ -15,6 +15,12 @@
   "permissions": [
     "activeTab"
   ],
+
+  "background": {
+    "scripts": [
+      "packages/browser-polyfill.min.js"
+    ]
+  },
 
   "browser_action": {
     "default_icon": "icons/tomatoe-32.png",
