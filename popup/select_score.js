@@ -22,6 +22,7 @@ function listenForSubmit() {
   })
 }
 
+browser.tabs.executeScript({file: "/packages/browser-polyfill.min.js"});
 browser.tabs.executeScript({file: "/content_scripts/set_score.js"})
 .then(listenForSubmit)
 .catch(logError)
