@@ -16,6 +16,12 @@
     "activeTab"
   ],
 
+  "background": {
+    "scripts": [
+      "packages/browser-polyfill.min.js"
+    ]
+  },
+
   "browser_action": {
     "default_icon": "icons/tomatoe-32.png",
     "default_title": "Rotten Liar",
