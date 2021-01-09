@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ./src
+zip -r -X ../versions/rotten_liar-$1.zip .
+cd -
