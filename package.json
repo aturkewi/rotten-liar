@@ -1,0 +1,23 @@
+{
+  "name": "rotten-liar",
+  "version": "1.0.0",
+  "description": "Update rotten tomatoes scores",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webextension-polyfill": "^0.7.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aturkewi/rotten-liar.git"
+  },
+  "author": "Avi Turkewitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aturkewi/rotten-liar/issues"
+  },
+  "homepage": "https://github.com/aturkewi/rotten-liar#readme"
+}
