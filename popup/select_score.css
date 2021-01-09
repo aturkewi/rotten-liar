@@ -1,5 +1,10 @@
 html, body {
   width: 200px;
+  margin: 0px;
+}
+
+.level {
+  padding: 8px;
 }
 
 #popup-content {
@@ -14,6 +19,10 @@ html, body {
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
+}
+
+.score-input {
+  max-width: 3.5em;
 }
 
 .row {
